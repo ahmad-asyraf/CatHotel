@@ -58,7 +58,6 @@
             button:hover {
                 opacity: 0.8;
             }
-
         </style>
     </head>
     <body>
@@ -68,18 +67,16 @@
                     String username = request.getParameter("username");
                     String password = request.getParameter("password");
 
-
                     Class.forName("com.mysql.jdbc.Driver");
                     String myURL = "jdbc:mysql://localhost/cat";
                     Connection con = DriverManager.getConnection(myURL, "root", "root");
                     Statement myStatement = con.createStatement();
                     String insertQuery = "SELECT username, password FROM customer WHERE " + "username='" + username + "'";
                     ResultSet myRS = myStatement.executeQuery(insertQuery);
-                    while (myRS.next()) {  
-                            session.setAttribute("username", username);
-                            session.setAttribute("password", password);
-                            response.sendRedirect("userhome.jsp");
-                        
+                    while (myRS.next()) {
+                        session.setAttribute("username", username);
+                        session.setAttribute("password", password);
+                        response.sendRedirect("userhome.jsp");
                     }
                     con.close();
                 %>

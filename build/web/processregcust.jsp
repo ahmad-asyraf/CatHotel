@@ -11,33 +11,33 @@
 <!DOCTYPE html>
 <html>
     <script type="text/javascript">
-function alertName(){
-alert("Register Confirmed!");
-} 
-</script> 
+        function alertName() {
+            alert("Register Confirmed!");
+        }
+    </script> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    
+
     <body>
         <style>
-    
-.bg-img {
-  /* The image used */
-  background-image: url("blue.jpg");
 
-  min-height: 1050px;
+            .bg-img {
+                /* The image used */
+                background-image: url("blue.jpg");
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
+                min-height: 1050px;
 
-</style>
-                <div class="container">
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+
+        </style>
+        <div class="container">
             <div class="form">
                 <jsp:useBean id="user" class="CatSystem.user" scope="request" />
                 <jsp:setProperty name="user" property="*" />
@@ -57,15 +57,14 @@ alert("Register Confirmed!");
                     myPS.setString(4, user.getPhone());
                     myPS.setString(5, user.getAddress());
                     result = myPS.executeUpdate();
-                    
+
                     if (result > 0) {%>
- 
+
                 <%    response.sendRedirect("Login.jsp");
                     }
                     con.close();
                 %>
-                
-    </body>
 
-</html>
- 
+                </body>
+
+                </html>

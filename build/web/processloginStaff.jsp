@@ -68,18 +68,17 @@
                     String name = request.getParameter("name");
                     String password = request.getParameter("password");
 
-
                     Class.forName("com.mysql.jdbc.Driver");
                     String myURL = "jdbc:mysql://localhost/cat";
                     Connection con = DriverManager.getConnection(myURL, "root", "root");
                     Statement myStatement = con.createStatement();
                     String insertQuery = "SELECT name, password FROM staff WHERE " + "name='" + name + "'";
                     ResultSet myRS = myStatement.executeQuery(insertQuery);
-                    while (myRS.next()) {  
-                            session.setAttribute("name", name);
-                            session.setAttribute("password", password);
-                            response.sendRedirect("Staffhome.jsp");
-                        
+                    while (myRS.next()) {
+                        session.setAttribute("name", name);
+                        session.setAttribute("password", password);
+                        response.sendRedirect("Staffhome.jsp");
+
                     }
                     con.close();
                 %>

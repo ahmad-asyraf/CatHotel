@@ -15,20 +15,20 @@
         <title>JSP Page</title>
     </head>
     <body>
-                        <%
-                    int result;
-                    String id = request.getParameter("id");
+        <%
+            int result;
+            String id = request.getParameter("id");
 
-                    Class.forName("com.mysql.jdbc.Driver");
-                    String myURL = "jdbc:mysql://localhost/cat";
-                    Connection con = DriverManager.getConnection(myURL, "root", "root");
+            Class.forName("com.mysql.jdbc.Driver");
+            String myURL = "jdbc:mysql://localhost/cat";
+            Connection con = DriverManager.getConnection(myURL, "root", "root");
 
-                    String insertQuery = "DELETE FROM reservation WHERE id=?";
-                    PreparedStatement myPS = con.prepareStatement(insertQuery);
-                    myPS.setString(1, id);
+            String insertQuery = "DELETE FROM reservation WHERE id=?";
+            PreparedStatement myPS = con.prepareStatement(insertQuery);
+            myPS.setString(1, id);
 
-                    result = myPS.executeUpdate();
-                    con.close();
-                %>
+            result = myPS.executeUpdate();
+            con.close();
+        %>
     </body>
 </html>
