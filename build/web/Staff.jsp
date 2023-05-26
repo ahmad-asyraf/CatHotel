@@ -54,7 +54,7 @@
                             <div class="form-content">
                                 <h1 class="">Hi, Staff!</h1>
                                 <p class="">Log in to your account to continue.</p>
-                                <form class="text-left" method="POST" action="processloginStaff.jsp">
+                                <form class="text-left" method="POST" action="<%= request.getContextPath()%>/controllers/login.jsp">
                                     <div class="form">
                                         <div id="username-field" class="field-wrapper input">
                                             <label for="name">Name</label>

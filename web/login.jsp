@@ -9,21 +9,21 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Login</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-        <title></title>
         <link rel="icon" type="image/x-icon"/>
-        <link href="css/loader.css" rel="stylesheet" type="text/css" />
-        <script src="js/loader.js"></script>
+        <link href="<%= request.getContextPath()%>/css/loader.css" rel="stylesheet" type="text/css" />
+        <script src="<%= request.getContextPath()%>/js/loader.js"></script>
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
         <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/plugins.css" rel="stylesheet" type="text/css" />
-        <link href="css/form-2.css" rel="stylesheet" type="text/css" />
+        <link href="<%= request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="<%= request.getContextPath()%>/css/plugins.css" rel="stylesheet" type="text/css" />
+        <link href="<%= request.getContextPath()%>/css/form-2.css" rel="stylesheet" type="text/css" />
         <!-- END GLOBAL MANDATORY STYLES -->
-        <link rel="stylesheet" type="text/css" href="css/theme-checkbox-radio.css">
-        <link rel="stylesheet" type="text/css" href="css/switches.css">
+        <link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/css/theme-checkbox-radio.css">
+        <link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/css/switches.css">
 
         <style>
             .bg-img {

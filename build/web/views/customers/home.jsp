@@ -4,35 +4,19 @@
     Author     : Asyraf
 --%>
 
-<%@page import="CatSystem.User"%>
+<%@page import="models.User"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page errorPage="../../controllers/error.jsp" %>
 <%
     User user = (User) session.getAttribute("username");
     if (user == null) {
-        response.sendRedirect(request.getContextPath() + "/login.jsp");
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Pet Sitting - Free Bootstrap 4 Template by Colorlib</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/css/animate.css">
-
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/css/magnific-popup.css">
-
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/css/bootstrap-datepicker.css">
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/css/jquery.timepicker.css">
-
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/css/flaticon.css">
-        <link rel="stylesheet" href="<%= request.getContextPath()%>/css/style.css">
+        <%@include file="../layouts/header.jsp" %>
     </head>
     <body>
         <div class="wrap">
@@ -59,19 +43,7 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container">
-                <a class="navbar-brand" href="homepage.jsp"><span class="flaticon-pawprint-1 mr-2"></span>QD Cat Hotel and Spa Centre</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-bars"></span> Menu
-                </button>
-                <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a href="homepage.jsp" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="reservation.jsp" class="nav-link">Reservation</a></li> 
-                        <li class="nav-item"><a href="reservehistory.jsp" class="nav-link text-nowrap">Reservation History</a></li>
-                        <li class="nav-item"><a href="profile.jsp" class="nav-link">Profile </a></li>
-                        <li class="nav-item"><a href="profile.jsp" class="nav-link">Logout</a></li>
-                    </ul>
-                </div>
+                <%@include file="../layouts/navigation.jsp" %>
             </div>
         </nav>
         <!-- END nav -->
@@ -287,7 +259,7 @@
             </div>
         </section>
 
-        <section class="ftco-section testimony-section" style="background-image: url('images/Qd bg2.jpg');">
+        <section class="ftco-section testimony-section" style="background-image: url('<%= request.getContextPath()%>/images/Qd bg2.jpg');">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row justify-content-center pb-5 mb-3">
@@ -304,7 +276,7 @@
                                     <div class="text">
                                         <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                                         <div class="d-flex align-items-center">
-                                            <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                            <div class="user-img" style="background-image: url(<%= request.getContextPath()%>/images/person_1.jpg)"></div>
                                             <div class="pl-3">
                                                 <p class="name">Roger Scott</p>
                                                 <span class="position">Marketing Manager</span>
@@ -319,7 +291,7 @@
                                     <div class="text">
                                         <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                                         <div class="d-flex align-items-center">
-                                            <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                            <div class="user-img" style="background-image: url(<%= request.getContextPath()%>/images/person_2.jpg)"></div>
                                             <div class="pl-3">
                                                 <p class="name">Roger Scott</p>
                                                 <span class="position">Marketing Manager</span>
@@ -334,7 +306,7 @@
                                     <div class="text">
                                         <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                                         <div class="d-flex align-items-center">
-                                            <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                                            <div class="user-img" style="background-image: url(<%= request.getContextPath()%>/images/person_3.jpg)"></div>
                                             <div class="pl-3">
                                                 <p class="name">Roger Scott</p>
                                                 <span class="position">Marketing Manager</span>
@@ -349,7 +321,7 @@
                                     <div class="text">
                                         <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                                         <div class="d-flex align-items-center">
-                                            <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                            <div class="user-img" style="background-image: url(<%= request.getContextPath()%>/images/person_1.jpg)"></div>
                                             <div class="pl-3">
                                                 <p class="name">Roger Scott</p>
                                                 <span class="position">Marketing Manager</span>
@@ -364,7 +336,7 @@
                                     <div class="text">
                                         <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                                         <div class="d-flex align-items-center">
-                                            <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                            <div class="user-img" style="background-image: url(<%= request.getContextPath()%>/images/person_2.jpg)"></div>
                                             <div class="pl-3">
                                                 <p class="name">Roger Scott</p>
                                                 <span class="position">Marketing Manager</span>
@@ -379,7 +351,7 @@
             </div>
         </section>
 
-        <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url(images/bg_3.jpg);">
+        <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url(<%= request.getContextPath()%>/images/bg_3.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row d-md-flex justify-content-end">
@@ -494,21 +466,6 @@
         <!-- loader -->
         <!--<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>-->
 
-        <script src="<%= request.getContextPath()%>/js/jquery.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/jquery-migrate-3.0.1.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/popper.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/bootstrap.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/jquery.easing.1.3.js"></script>
-        <script src="<%= request.getContextPath()%>/js/jquery.waypoints.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/jquery.stellar.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/jquery.animateNumber.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/bootstrap-datepicker.js"></script>
-        <script src="<%= request.getContextPath()%>/js/jquery.timepicker.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/owl.carousel.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/jquery.magnific-popup.min.js"></script>
-        <script src="<%= request.getContextPath()%>/js/scrollax.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-        <script src="<%= request.getContextPath()%>/js/google-map.js"></script>
-        <script src="<%= request.getContextPath()%>/js/main.js"></script>
+        <%@include file="../layouts/footer.jsp" %>
     </body>
 </html>
