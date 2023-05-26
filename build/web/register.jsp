@@ -5,23 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<style>
-
-    .bg-img {
-        /* The image used */
-        background-image: url("QD bg1.jpg");
-
-        min-height: 1050px;
-
-        /* Center and scale the image nicely */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-    }
-
-</style>
-
+<%@page errorPage="error.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,30 +24,40 @@
         <!-- END GLOBAL MANDATORY STYLES -->
         <link rel="stylesheet" type="text/css" href="css/theme-checkbox-radio.css">
         <link rel="stylesheet" type="text/css" href="css/switches.css">
+        <style>
+            .bg-img {
+                /* The image used */
+                background-image: url("QD bg1.jpg");
+
+                min-height: 1050px;
+
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+        </style>
     </head>
     <body class="form">
-
         <!-- BEGIN LOADER -->
         <div id="load_screen"> <div class="loader"> <div class="loader-content">
                     <div class="spinner-grow align-self-center"></div>
                 </div></div></div>
         <!--  END LOADER -->
+
         <div class="bg-img">
             <div class="form-container outer">
                 <div class="bg-img">
                     <div class="form-form">
-
                         <div class="form-form-wrap">
-
                             <div class="form-container">
-
                                 <div class="form-content">
-
-
                                     <h1 class="">Hi, Cat Owner</h1>
                                     <p class="">Register your account to proceed.</p>
 
-                                    <form class="text-left" method="POST" action="processregcust.jsp">
+                                    <!--<form class="text-left" method="POST" action="processregcust.jsp">-->
+                                    <form class="text-left" method="POST" action="<%= request.getContextPath()%>/controllers/register.jsp">
                                         <div class="form">
 
                                             <div id="username-field" class="field-wrapper input">
@@ -98,8 +92,6 @@
                                                 <input id="address" name="address" type="address" class="form-control" placeholder="Please insert your address">
                                             </div>
 
-
-
                                             <div class="d-sm-flex justify-content-between">
                                                 <div class="field-wrapper">
                                                     <button type="submit" name="register" class="btn btn-primary" value="">Register</button>
@@ -107,28 +99,27 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <p class="signup-link">Already Have An Account ? <a href="Login.jsp">Login into account</a></p>
+                                    <p class="signup-link">Already Have An Account ? <a href="login.jsp">Login into account</a></p>
                                 </div>                  
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
+        <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+        <script src="../js/jquery-3.1.1.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
 
-            <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-            <script src="../js/jquery-3.1.1.min.js"></script>
-            <script src="../js/popper.min.js"></script>
-            <script src="../js/bootstrap.min.js"></script>
-
-            <!-- END GLOBAL MANDATORY SCRIPTS -->
-            <script src="../js/form-2.js"></script>
-            <script>
-                var loaderElement = document.querySelector('#load_screen');
-                setTimeout(function () {
-                    loaderElement.style.display = "none";
-                }, 3000);
-            </script>
-
+        <!-- END GLOBAL MANDATORY SCRIPTS -->
+        <script src="../js/form-2.js"></script>
+        <script>
+            var loaderElement = document.querySelector('#load_screen');
+            setTimeout(function () {
+                loaderElement.style.display = "none";
+            }, 3000);
+        </script>
     </body>
 </html>

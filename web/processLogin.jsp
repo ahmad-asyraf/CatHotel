@@ -1,7 +1,5 @@
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="CatSystem.user" %>
+<%@page import="CatSystem.User" %>
 <%@page import="java.sql.*" %> 
 <!DOCTYPE html>
 <html>

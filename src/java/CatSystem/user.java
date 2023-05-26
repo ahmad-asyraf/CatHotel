@@ -8,7 +8,8 @@ package CatSystem;
  *
  * @author admin
  */
-public class user {
+public class User {
+
     private String name;
     private String username;
     private String password;
@@ -46,11 +47,13 @@ public class user {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-     public String getAddress() {
+
+    public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
+
 }

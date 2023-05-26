@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page errorPage="error.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -58,7 +59,8 @@
                             <div class="form-content">
                                 <h1 class="">Hi, Cat Owner</h1>
                                 <p class="">Log in to your account to continue.</p>
-                                <form action="processLogin.jsp" method="POST" class="text-left">
+                                <!--<form action="processLogin.jsp" method="POST" class="text-left">-->
+                                <form action="<%= request.getContextPath()%>/controllers/login.jsp" method="POST" class="text-left">
                                     <div class="form">
                                         <div id="username-field" class="field-wrapper input">
                                             <label for="username">USERNAME</label>

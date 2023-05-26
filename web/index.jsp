@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <jsp:forward page="Login.jsp" />
+        <jsp:forward page="login.jsp" />
     </body>
 </html>

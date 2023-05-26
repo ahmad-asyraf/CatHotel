@@ -1,75 +1,29 @@
 package bean;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class dbConnect {
 
-    //Creating Connection
-    public static Connection connection;
+    private static Connection connection;
 
-    //Creating universal method to open connect will mysql database
     public static Connection getConnection() {
         try {
-            //Registering with mysql Driver
+            //Step 1: Load the JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cat", "root", "root");
-        } catch (Exception e) {
-            e.printStackTrace();
+            //Step 2: Load the JDBC driver
+            String myUrl = "jdbc:mysql://localhost:3306/cat";
+            connection = DriverManager.getConnection(myUrl, "root", "");
+        } catch (ClassNotFoundException | SQLException e) {
+            e.getMessage();
         }
-        return (connection);
+        return connection;
     }
 
-    //Creating universal method to close connect will mysql database
-    public static void CloseConnection() {
-        if (connection != null) {
-            try {
-                connection.close();
-                connection = null;
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-        }
-    }
-
-    //Creating universal method to query for retriving information
-    public static ResultSet getResultFromSqlQuery(String SqlQueryString) {
-        //Creating Resultset object
-        ResultSet rs = null;
+    public void closeConnection() {
         try {
-            //Checking whether the connection is null or null
-            if (connection == null) {
-                getConnection();
-            }
-            //Querying the query
-            rs = connection.createStatement().executeQuery(SqlQueryString);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            connection.close();
+        } catch (SQLException e) {
+            e.getMessage();
         }
-        return rs;
-    }
-
-    //Creating universal method to query for inserting or updating information in mysql database
-    public static int insertUpdateFromSqlQuery(String SqlQueryString) {
-        int i = 2;
-        try {
-            //Checking whether the connection is null or null
-            if (connection == null) {
-                getConnection();
-            }
-            //Querying the query
-            i = connection.createStatement().executeUpdate(SqlQueryString);
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return i;
     }
 }

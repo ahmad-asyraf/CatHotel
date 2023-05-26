@@ -1,4 +1,4 @@
-<%@page import="CatSystem.user" %>
+<%@page import="CatSystem.User" %>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.PreparedStatement"%>

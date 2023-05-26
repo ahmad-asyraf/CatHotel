@@ -7,22 +7,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>\
 <%@page language="java" %>
 <%@page import="java.sql.*" %>
-<%@page import="CatSystem.user" %>
+<%@page import="CatSystem.User" %>
 <!DOCTYPE html>
 <html>
-    <script type="text/javascript">
-        function alertName() {
-            alert("Register Confirmed!");
-        }
-    </script> 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-    </head>
-
-    <body>
         <style>
-
             .bg-img {
                 /* The image used */
                 background-image: url("blue.jpg");
@@ -35,11 +26,12 @@
                 background-size: cover;
                 position: relative;
             }
-
         </style>
+    </head>
+    <body>
         <div class="container">
             <div class="form">
-                <jsp:useBean id="user" class="CatSystem.user" scope="request" />
+                <jsp:useBean id="user" class="CatSystem.User" scope="request" />
                 <jsp:setProperty name="user" property="*" />
                 <%@ page errorPage="error.jsp" %> 
                 <%
@@ -64,7 +56,13 @@
                     }
                     con.close();
                 %>
+            </div>
+        </div>
 
-                </body>
-
-                </html>
+        <script type="text/javascript">
+            function alertName() {
+                alert("Register Confirmed!");
+            }
+        </script> 
+    </body>
+</html>
