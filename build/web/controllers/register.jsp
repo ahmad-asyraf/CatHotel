@@ -8,7 +8,7 @@
 <%@page import="java.sql.*"%>
 <%@page import="utils.DBConnect"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ page errorPage="../error.jsp" %>
+<%@ page errorPage="error.jsp" %>
 <%
     DBConnect con = new DBConnect();
     User user = new User();
